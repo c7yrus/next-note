@@ -1,16 +1,20 @@
-import Link from "next/link";
+/** @jsxImportSource theme-ui */
 
-const Main = () => {
-  const title = "Index Page";
-  return (
-    <div>
-      <h1>{title}</h1>
-      <br />
-      <Link href="/notes">
-        <a>{`Note`}</a>
-      </Link>
+const App = () => (
+  <div sx={{ height: `calc(100vh - 60px)` }}>
+    <div
+      sx={{
+        variant: "containers.page",
+        display: "flex",
+        alignItems: "center",
+        height: "100%",
+      }}
+    >
+      <h1 sx={{ fontSize: 8, my: 0 }}>
+        This is a really dope note taking app.
+      </h1>
     </div>
-  );
-};
+  </div>
+);
 
-export default Main;
+export default App;

@@ -1,12 +1,17 @@
+/** @jsxImportSource theme-ui */
+
 import { useRouter } from "next/router";
+import Link from "next/link";
 
-const NoteId = () => {
+const NoteIds = () => {
   const router = useRouter();
-
   const { id } = router.query;
 
-  const title = "Note Id";
-  return <div>{`${title} - ${id}`}</div>;
+  return (
+    <div sx={{ variant: "containers.page" }}>
+      <h1>Note: {id} </h1>
+    </div>
+  );
 };
 
-export default NoteId;
+export default NoteIds;
