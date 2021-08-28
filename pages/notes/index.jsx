@@ -1,11 +1,18 @@
 /** @jsxImportSource theme-ui */
 import Link from "next/link";
 
-const Notes = () => {
-  const notes = new Array(15)
-    .fill(1)
-    .map((e, i) => ({ id: i, title: `This is my note ${i}` }));
+export const getServerSideProps = async () => {
+  //probably a good idea to get the URL from Headers or from environmental variable from next config. Will change later.
+  const res = await fetch("http://localhost:3000/api/note/");
+  const { data } = await res.json();
+  return {
+    props: {
+      notes: data,
+    },
+  };
+};
 
+const Notes = ({ notes }) => {
   return (
     <div sx={{ variant: "containers.page" }}>
       <h1>My Notes</h1>
