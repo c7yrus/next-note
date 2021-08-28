@@ -1,17 +1,13 @@
 import Link from "next/link";
 
 const Main = () => {
-  const title = "NEXT";
+  const title = "Index Page";
   return (
     <div>
-      {title}
+      <h1>{title}</h1>
       <br />
       <Link href="/notes">
         <a>{`Note`}</a>
-      </Link>
-      <br />
-      <Link href="/notes/id">
-        <a>{`Note Id`}</a>
       </Link>
     </div>
   );
