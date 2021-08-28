@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 export const getServerSideProps = async ({ params, req, res }) => {
-  const response = await fetch(`http://localhost:3000/api/note/${params.id}`);
+  const response = await fetch(`${process.env.API_URL}/api/note`);
 
   // so much power!
   if (!response.ok) {
